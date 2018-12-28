@@ -6,6 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+docker_build/*
+!docker_build/build_docker.sh
+!docker_build/full_purge_docker.sh
+!docker_build/run_docker.sh
+!docker_build/run_memcache_docker.sh
+!docker_build/stop_remove_docker.sh
+
 # Distribution / packaging
 .Python
 build/
