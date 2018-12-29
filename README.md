@@ -19,6 +19,7 @@ export CGX_AUTH_TOKEN="<your CGX AUTH_TOKEN here>"
 docker run -d --name topology_memcached memcached:latest
 docker run -d --name topology_proxy -p 80:80 \
   --link topology_memcached:memcached \
+  --sysctl net.core.somaxconn=65535 \
   -e CGX_AUTH_TOKEN=$CGX_AUTH_TOKEN \
   -e CGX_MEMCACHED="memcached,11211" \
   ebob9/topology_proxy:latest
