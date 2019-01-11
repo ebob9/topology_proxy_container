@@ -10,6 +10,6 @@ ENV NGINX_WORKER_PROCESSES="auto" \
 
 WORKDIR /app
 
-COPY build_container.sh LICENSE uwsgi.ini CGX_CPROD_CA_BUNDLE.crt /app/
+COPY build_container.sh LICENSE uwsgi.ini CGX_CPROD_CA_BUNDLE.crt prestart.sh /app/
 
 RUN ./build_container.sh
