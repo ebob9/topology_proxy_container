@@ -1,0 +1,43 @@
+apiVersion: 2018-10-01
+# location: eastus
+name: cgx_topology_proxy
+properties:
+  containers:
+  - name: topology-proxy
+    properties:
+      environmentVariables:
+        - name: 'CGX_MEMCACHED'
+          value: '127.0.0.1:11211'
+        - name: 'CGX_AUTH_TOKEN'
+          secureValue: 'secure-api-token-here'
+        - name: 'CGX_USERNAME'
+          value: 'admin'
+        - name: 'CGX_USERPASS'
+          secureValue: 'changemerightnow2'
+      image: ebob9/topology_proxy:latest
+      ports:
+        - port: 80
+        - port: 443
+      resources:
+        requests:
+          cpu: 2.0
+          memoryInGB: 2
+  - name: topology-memcached
+    properties:
+      image: memcached:latest
+      ports:
+        - port: 11211
+      resources:
+        requests:
+          cpu: 1.0
+          memoryInGB: 1.5
+  osType: Linux
+  ipAddress:
+    dnsNameLabel: "put-dnsname-here"
+    type: Public
+    ports:
+      - protocol: tcp
+        port: '443'
+  restartPolicy: Always
+tags: null
+type: Microsoft.ContainerInstance/containerGroups
