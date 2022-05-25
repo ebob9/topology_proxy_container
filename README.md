@@ -43,6 +43,7 @@ MIT
 #### Version
 Version | Changes
 ------- | --------
+**2.0.3**| Update CA file for latest Prisma SD-WAN CA pins.
 **2.0.2**| Support for Azure Container Instances, TLS in NGNIX, adaptive somaxconn listen in uwsgi.ini, and Optional BasicAuth support for TLS
 **2.0.1**| Better CA_BUNDLE handling (scales more efficiently), update to topology_proxy_app v2.0.1
 **2.0.0**| First Containerization of topology_proxy_app

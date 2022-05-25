@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# ensure app dir
+cd /app/
 
 # updates, prereqs
 apt-get -y update

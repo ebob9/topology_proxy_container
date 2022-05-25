@@ -7,4 +7,4 @@ fi
 
 cp ../* .
 
-docker build --no-cache -t ebob9/topology_proxy:${1} -t ebob9/topology_proxy:latest .
+docker build --progress=plain --no-cache -t ebob9/topology_proxy:${1} -t ebob9/topology_proxy:latest .
